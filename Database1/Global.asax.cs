@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Database1.Models;
+using Database1.DAL;
+using System.Data.Entity;
 
 namespace Database1
 {
@@ -11,6 +14,7 @@ namespace Database1
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<BasketballContext>(null);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
